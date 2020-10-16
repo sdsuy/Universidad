@@ -28,6 +28,9 @@ public class Salon implements Serializable {
 	
 	private boolean bandera;
 	
+	@Enumerated(value=EnumType.String)
+	private Tipo tipo;
+	
 	public enum Tipo 
 	{
 		LABORATORIO,COMUN,EXAMEN
