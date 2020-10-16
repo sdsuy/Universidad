@@ -28,7 +28,7 @@ public class Salon implements Serializable {
 	
 	private boolean bandera;
 	
-	public Enum Tipo 
+	public enum Tipo 
 	{
 		LABORATORIO,COMUN,EXAMEN
 		
