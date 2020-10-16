@@ -3,3 +3,4 @@
 .project
 .settings/
 ejbModule/META-INF/persistence.xml
+/bin/
