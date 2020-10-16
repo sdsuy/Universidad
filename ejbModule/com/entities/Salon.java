@@ -28,7 +28,7 @@ public class Salon implements Serializable {
 	
 	private boolean bandera;
 	
-	@Enumerated(value=EnumType.String)
+	@Enumerated(value=EnumType.STRING)
 	private Tipo tipo;
 	
 	public enum Tipo 
