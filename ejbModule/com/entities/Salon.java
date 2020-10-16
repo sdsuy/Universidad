@@ -1,9 +1,10 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 /**
  * Entity implementation class for Entity: Salon
@@ -36,6 +37,12 @@ public class Salon implements Serializable {
 		LABORATORIO,COMUN,EXAMEN
 		
 	}
+	
+	@ManyToOne(optional=false)
+	private Area area;
+	
+	@OneToMany
+	private List<Material> materiales = new ArrayList<>();
 	
 	
 	public Salon() {
