@@ -16,27 +16,27 @@ import javax.persistence.*;
 public class Salon implements Serializable {
 
 	
-	private static final long serialVersionUID = 1L;
+//	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType=Auto)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
 	@Column(length=40)
 	private String nombre;
 	
-	private int cap_max;
+	@Column(name="cap_max")
+	private int capacidadMaxima;
 	
 	private boolean bandera;
 	
-	@Enumerated(value=EnumType.STRING)
+	@Enumerated(EnumType.STRING)
 	private Tipo tipo;
 	
 
 	public enum Tipo 
 	{
-		LABORATORIO,COMUN,EXAMEN
-		
+		LABORATORIO,COMUN,EXAMEN		
 	}
 	
 	@ManyToOne(optional=false)
@@ -61,11 +61,11 @@ public class Salon implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getCap_max() {
-		return cap_max;
+	public int getCapacidadMaxima() {
+		return capacidadMaxima;
 	}
-	public void setCap_max(int cap_max) {
-		this.cap_max = cap_max;
+	public void setCapacidadMaxima(int capacidadMaxima) {
+		this.capacidadMaxima = capacidadMaxima;
 	}
 	public boolean isBandera() {
 		return bandera;
@@ -73,6 +73,23 @@ public class Salon implements Serializable {
 	public void setBandera(boolean bandera) {
 		this.bandera = bandera;
 	}
-
+	public Tipo getTipo() {
+		return tipo;
+	}
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+	public Area getArea() {
+		return area;
+	}
+	public void setArea(Area area) {
+		this.area = area;
+	}
+	public List<Material> getMateriales() {
+		return materiales;
+	}
+	public void setMateriales(List<Material> materiales) {
+		this.materiales = materiales;
+	}
    
 }
