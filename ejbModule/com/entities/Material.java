@@ -60,12 +60,6 @@ public class Material implements Serializable {
 	}
 
 
-	private static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-
-
 }
    
 
