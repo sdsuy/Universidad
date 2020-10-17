@@ -1,6 +1,9 @@
 package com.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,12 +34,7 @@ public class Salon implements Serializable {
 	@Enumerated(value=EnumType.STRING)
 	private Tipo tipo;
 	
-	public enum Tipo 
-	{
-		LABORATORIO,COMUN,EXAMEN
-		
-	}
-	
+	private List<Material> materiales = new ArrayList<>();
 	
 	public Salon() {
 		super();
