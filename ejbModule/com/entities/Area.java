@@ -2,8 +2,6 @@ package com.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 /**
  * Entity implementation class for Entity: Area
