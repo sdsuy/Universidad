@@ -32,9 +32,7 @@ public class Salon implements Serializable {
 	@Enumerated(value=EnumType.STRING)
 	private Tipo tipo;
 	
-<<<<<<< HEAD
-	private List<Material> materiales = new ArrayList<>();
-=======
+
 	public enum Tipo 
 	{
 		LABORATORIO,COMUN,EXAMEN
@@ -47,7 +45,6 @@ public class Salon implements Serializable {
 	@OneToMany
 	private List<Material> materiales = new ArrayList<>();
 	
->>>>>>> 72d918fa423092d0c72157ef3b01e8c5a3ee6f8a
 	
 	public Salon() {
 		super();
