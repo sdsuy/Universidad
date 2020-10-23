@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
 
 import com.entities.Materia;
 import com.exception.ServiciosException;
@@ -16,7 +17,7 @@ import com.exception.ServiciosException;
 public class MateriasBean implements MateriasBeanRemote {
 	
 	@PersistenceContext
-	private EntityManager em;
+	private EntityManager manager;
 
     /**
      * Default constructor. 
@@ -27,19 +28,35 @@ public class MateriasBean implements MateriasBeanRemote {
 
 	@Override
 	public void crear(Materia materia) throws ServiciosException {
-		// TODO Auto-generated method stub
+		try {
+			manager.persist(materia);
+			manager.flush();
+		} catch(PersistenceException e){
+			throw new ServiciosException("No se pudo crear la materia");
+		}
 		
 	}
 
 	@Override
 	public void actualizar(Materia materia) throws ServiciosException {
-		// TODO Auto-generated method stub
+		try {
+			manager.merge(materia);
+			manager.flush();
+		} catch(PersistenceException e){
+			throw new ServiciosException("No se pudo actualizar la materia");
+		}
 		
 	}
 
 	@Override
 	public void borrar(Long id) throws ServiciosException {
-		// TODO Auto-generated method stub
+		try{
+			Materia materia = manager.find(Materia.class, id);
+			manager.remove(materia);
+			manager.flush();
+		}catch(PersistenceException e){
+			throw new ServiciosException("No se pudo borrar la materia");
+		}
 		
 	}
 
