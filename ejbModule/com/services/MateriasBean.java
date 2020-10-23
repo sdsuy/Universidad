@@ -28,9 +28,9 @@ public class MateriasBean implements MateriasBeanRemote {
     }
 
 	@Override
-	public void crear(Material materia) throws ServiciosException {
+	public void crear(Material material) throws ServiciosException {
 		try {
-			manager.persist(materia);
+			manager.persist(material);
 			manager.flush();
 		} catch(PersistenceException e){
 			throw new ServiciosException("No se pudo crear la materia");
@@ -39,9 +39,9 @@ public class MateriasBean implements MateriasBeanRemote {
 	}
 
 	@Override
-	public void actualizar(Material materia) throws ServiciosException {
+	public void actualizar(Material material) throws ServiciosException {
 		try {
-			manager.merge(materia);
+			manager.merge(material);
 			manager.flush();
 		} catch(PersistenceException e){
 			throw new ServiciosException("No se pudo actualizar la materia");
@@ -52,8 +52,8 @@ public class MateriasBean implements MateriasBeanRemote {
 	@Override
 	public void borrar(Long id) throws ServiciosException {
 		try{
-			Material materia = manager.find(Material.class, id);
-			manager.remove(materia);
+			Material material = manager.find(Material.class, id);
+			manager.remove(material);
 			manager.flush();
 		}catch(PersistenceException e){
 			throw new ServiciosException("No se pudo borrar la materia");
