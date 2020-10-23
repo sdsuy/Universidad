@@ -43,7 +43,7 @@ public class Salon implements Serializable {
 	private Area area;
 	
 	@OneToMany
-	private List<Materia> materiales = new ArrayList<>();
+	private List<Material> materiales = new ArrayList<>();
 	
 	
 	public Salon() {
@@ -85,10 +85,10 @@ public class Salon implements Serializable {
 	public void setArea(Area area) {
 		this.area = area;
 	}
-	public List<Materia> getMateriales() {
+	public List<Material> getMateriales() {
 		return materiales;
 	}
-	public void setMateriales(List<Materia> materiales) {
+	public void setMateriales(List<Material> materiales) {
 		this.materiales = materiales;
 	}
    

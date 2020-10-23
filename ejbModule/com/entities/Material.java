@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Materia implements Serializable {
+public class Material implements Serializable {
 
 	
 //	private static final long serialVersionUID = 1L;
@@ -25,7 +25,7 @@ public class Materia implements Serializable {
 	private String descripcion;
 
 	
-	public Materia() {
+	public Material() {
 		super();
 	}
 

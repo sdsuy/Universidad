@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
-import com.entities.Materia;
+import com.entities.Material;
 import com.exception.ServiciosException;
 
 /**
@@ -28,7 +28,7 @@ public class MateriasBean implements MateriasBeanRemote {
     }
 
 	@Override
-	public void crear(Materia materia) throws ServiciosException {
+	public void crear(Material materia) throws ServiciosException {
 		try {
 			manager.persist(materia);
 			manager.flush();
@@ -39,7 +39,7 @@ public class MateriasBean implements MateriasBeanRemote {
 	}
 
 	@Override
-	public void actualizar(Materia materia) throws ServiciosException {
+	public void actualizar(Material materia) throws ServiciosException {
 		try {
 			manager.merge(materia);
 			manager.flush();
@@ -52,7 +52,7 @@ public class MateriasBean implements MateriasBeanRemote {
 	@Override
 	public void borrar(Long id) throws ServiciosException {
 		try{
-			Materia materia = manager.find(Materia.class, id);
+			Material materia = manager.find(Material.class, id);
 			manager.remove(materia);
 			manager.flush();
 		}catch(PersistenceException e){
@@ -62,14 +62,14 @@ public class MateriasBean implements MateriasBeanRemote {
 	}
 
 	@Override
-	public List<Materia> obtenerTodos() {
-		TypedQuery<Materia> query = manager.createQuery("SELECT m FROM Materia m",Materia.class); 
+	public List<Material> obtenerTodos() {
+		TypedQuery<Material> query = manager.createQuery("SELECT m FROM Materia m",Material.class); 
 		return query.getResultList();
 	}
 
 	@Override
-	public List<Materia> obtenerTodos(String filtro) {
-		TypedQuery<Materia> query = manager.createQuery("SELECT m FROM Materia m WHERE m.nombre LIKE :nombre",Materia.class)
+	public List<Material> obtenerTodos(String filtro) {
+		TypedQuery<Material> query = manager.createQuery("SELECT m FROM Materia m WHERE m.nombre LIKE :nombre",Material.class)
 				.setParameter("nombre", filtro); 
 		return query.getResultList();
 	}
