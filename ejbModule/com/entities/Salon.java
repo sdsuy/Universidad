@@ -12,14 +12,16 @@ import javax.persistence.*;
  */
 
 @Entity
-
+@Table(name="salon")
+@NamedQuery(name="obtenerTodos", query="SELECT s FROM Salon s")
 public class Salon implements Serializable {
 
 	
 //	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "seq_id_salon", allocationSize = 20)
 	private Long id;
 	
 	@Column(length=40)
