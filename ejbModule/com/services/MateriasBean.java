@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
 
 import com.entities.Materia;
 import com.exception.ServiciosException;
@@ -62,8 +63,8 @@ public class MateriasBean implements MateriasBeanRemote {
 
 	@Override
 	public List<Materia> obtenerTodos() {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<Materia> query = manager.createQuery("SELECT m FROM Materia m",Materia.class); 
+		return query.getResultList();
 	}
 
 	@Override
