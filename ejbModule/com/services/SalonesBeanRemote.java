@@ -5,14 +5,16 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import com.entities.Salon;
+import com.exception.ServiciosException;
 
 @Remote
 public interface SalonesBeanRemote {
 	
-	void crear(Salon salon);
-	Salon leerUno(Long id); 
-	List<Salon> leerTodos();
-	void actualizar(Salon salon);
-	void borrar(Long id);
+	public void crear(Salon salon) throws ServiciosException;
+	public void actualizar(Salon salon) throws ServiciosException;
+	public void borrar(Long id) throws ServiciosException;
+	public List<Salon> obtenerUno(String filtro); 
+	List<Salon> obtenerTodos();
+	
 
 }
