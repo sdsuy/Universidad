@@ -69,8 +69,9 @@ public class MateriasBean implements MateriasBeanRemote {
 
 	@Override
 	public List<Materia> obtenerTodos(String filtro) {
-		// TODO Auto-generated method stub
-		return null;
+		TypedQuery<Materia> query = manager.createQuery("SELECT m FROM Materia m WHERE m.nombre LIKE :nombre",Materia.class)
+				.setParameter("nombre", filtro); 
+		return query.getResultList();
 	}
 
 }
