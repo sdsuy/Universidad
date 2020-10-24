@@ -9,6 +9,7 @@ import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import com.entities.Area;
+import com.entities.Material;
 import com.entities.Salon;
 import com.exception.ServiciosException;
 
@@ -88,8 +89,14 @@ public class SalonesBean implements SalonesBeanRemote {
 	}
 
 	@Override
-	public void asignarMaterial(Long idSalon, Long idMaterial) {
-		
+	public void asignarMaterial(Long idSalon, Long idMaterial) throws ServiciosException {
+		try {
+			Salon salon = em.find(Salon.class, idSalon);
+			salon.getMateriales().add(em.find(Material.class, idMaterial));
+		} catch (PersistenceException e) {
+			throw new ServiciosException("No se puede Asignar el Material al Salon");
+		}
+
 		
 	}
 
