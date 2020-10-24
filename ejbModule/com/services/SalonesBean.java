@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
+
+import com.entities.Area;
 import com.entities.Salon;
 import com.exception.ServiciosException;
 
@@ -74,14 +76,20 @@ public class SalonesBean implements SalonesBeanRemote {
 	}
 
 	@Override
-	public void asignarArea(Long idSalon, Long idArea) {
-		// TODO Auto-generated method stub
+	public void asignarArea(Long idSalon, Long idArea) throws ServiciosException{
+		try {
+			Salon salon = em.find(Salon.class,idSalon);
+			salon.setArea(em.find(Area.class, idArea));
+			em.flush();
+		} catch (PersistenceException e) {
+			throw new ServiciosException("No se pudo Asignar un area");
+		}
 		
 	}
 
 	@Override
 	public void asignarMaterial(Long idSalon, Long idMaterial) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
