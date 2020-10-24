@@ -73,5 +73,17 @@ public class SalonesBean implements SalonesBeanRemote {
 		return query.getResultList();
 	}
 
+	@Override
+	public void asignarArea(Long idSalon, Long idArea) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void asignarMaterial(Long idSalon, Long idMaterial) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

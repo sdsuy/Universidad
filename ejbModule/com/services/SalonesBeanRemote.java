@@ -16,5 +16,7 @@ public interface SalonesBeanRemote {
 	public List<Salon> obtenerUno(String filtro); 
 	List<Salon> obtenerTodos();
 	
+	void asignarArea(Long idSalon, Long idArea);
+	void asignarMaterial(Long idSalon, Long idMaterial);
 
 }
