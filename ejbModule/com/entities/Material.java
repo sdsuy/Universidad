@@ -15,8 +15,8 @@ public class Material implements Serializable {
 //	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	@SequenceGenerator(name = "seq_id_material", allocationSize = 20)
+	@SequenceGenerator(name = "material-generator", sequenceName = "material_sequence", allocationSize = 20)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "material-generator")
 	private Long id;
 	
 	@Column(length=40)

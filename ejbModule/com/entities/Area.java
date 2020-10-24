@@ -16,8 +16,8 @@ public class Area implements Serializable {
 //	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	@SequenceGenerator(name = "seq_id_area", allocationSize = 20)
+	@SequenceGenerator(name = "area-generator", sequenceName = "area_sequence", allocationSize = 20)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "area-generator")
 	private Long id;
 	
 	@Column(length=40)

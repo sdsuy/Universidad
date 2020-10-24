@@ -20,8 +20,8 @@ public class Salon implements Serializable {
 //	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	@SequenceGenerator(name = "seq_id_salon", allocationSize = 20)
+	@SequenceGenerator(name = "salon-generator", sequenceName = "salon_sequence", allocationSize = 20)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "salon-generator")
 	private Long id;
 	
 	@Column(length=40)
