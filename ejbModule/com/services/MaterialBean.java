@@ -33,7 +33,7 @@ public class MaterialBean implements MaterialBeanRemote {
 			manager.persist(material);
 			manager.flush();
 		} catch(PersistenceException e){
-			throw new ServiciosException("No se pudo crear la materia");
+			throw new ServiciosException("No se pudo crear el material");
 		}
 		
 	}
@@ -44,7 +44,7 @@ public class MaterialBean implements MaterialBeanRemote {
 			manager.merge(material);
 			manager.flush();
 		} catch(PersistenceException e){
-			throw new ServiciosException("No se pudo actualizar la materia");
+			throw new ServiciosException("No se pudo actualizar el material");
 		}
 		
 	}
@@ -56,20 +56,20 @@ public class MaterialBean implements MaterialBeanRemote {
 			manager.remove(material);
 			manager.flush();
 		}catch(PersistenceException e){
-			throw new ServiciosException("No se pudo borrar la materia");
+			throw new ServiciosException("No se pudo borrar el material");
 		}
 		
 	}
 
 	@Override
 	public List<Material> obtenerTodos() {
-		TypedQuery<Material> query = manager.createQuery("SELECT m FROM Materia m",Material.class); 
+		TypedQuery<Material> query = manager.createQuery("SELECT m FROM Materiales m",Material.class); 
 		return query.getResultList();
 	}
 
 	@Override
 	public List<Material> obtenerTodos(String filtro) {
-		TypedQuery<Material> query = manager.createQuery("SELECT m FROM Materia m WHERE m.nombre LIKE :nombre",Material.class)
+		TypedQuery<Material> query = manager.createQuery("SELECT m FROM Materiales m WHERE m.nombre LIKE :nombre",Material.class)
 				.setParameter("nombre", filtro); 
 		return query.getResultList();
 	}
