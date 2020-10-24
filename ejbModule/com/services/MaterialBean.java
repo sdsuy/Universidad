@@ -15,7 +15,7 @@ import com.exception.ServiciosException;
  * Session Bean implementation class MateriasBean
  */
 @Stateless
-public class MateriasBean implements MateriasBeanRemote {
+public class MaterialBean implements MaterialBeanRemote {
 	
 	@PersistenceContext
 	private EntityManager manager;
@@ -23,7 +23,7 @@ public class MateriasBean implements MateriasBeanRemote {
     /**
      * Default constructor. 
      */
-    public MateriasBean() {
+    public MaterialBean() {
         // TODO Auto-generated constructor stub
     }
 

@@ -8,7 +8,7 @@ import com.entities.Material;
 import com.exception.ServiciosException;
 
 @Remote
-public interface MateriasBeanRemote {
+public interface MaterialBeanRemote {
 	
 	public void crear(Material material) throws ServiciosException;
 	public void actualizar(Material material) throws ServiciosException;
