@@ -31,32 +31,32 @@ public class Material implements Serializable {
 	}
 
 
-	private Long getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	private void setId(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
 
-	private String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
 
-	private void setNombre(String nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
 
-	private String getDescripcion() {
+	public String getDescripcion() {
 		return descripcion;
 	}
 
 
-	private void setDescripcion(String descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
