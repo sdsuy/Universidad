@@ -22,7 +22,7 @@ public class Material implements Serializable {
 	@Column(length=60)
 	private String nombre;
 	
-	@Column(length=100)
+	@Column(length=200)
 	private String descripcion;
 
 	

@@ -12,8 +12,9 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name="salon")
+@Table(name="salones")
 @NamedQuery(name="obtenerTodos", query="SELECT s FROM Salon s")
+@NamedQuery(name="obtenerTodosFiltro", query="SELECT e FROM Salon e WHERE e.nombre LIKE :nombre")
 public class Salon implements Serializable {
 
 	
