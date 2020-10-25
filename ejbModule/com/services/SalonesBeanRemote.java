@@ -9,14 +9,14 @@ import com.exception.ServiciosException;
 
 @Remote
 public interface SalonesBeanRemote {
-	
-	public void crear(String nombre, Long idDepartamento) throws ServiciosException;
-	public void actualizar(Salon salon) throws ServiciosException;
-	public void borrar(Long id) throws ServiciosException;
-	public List<Salon> obtenerUno(String filtro); 
+
+	void crear(Salon salon) throws ServiciosException;
+	void actualizar(Salon salon) throws ServiciosException;
+	void borrar(Long id) throws ServiciosException;
+	List<Salon> obtenerUno(String filtro);
 	List<Salon> obtenerTodos();
 	
-	void asignarArea(Long idSalon, Long idArea);
-	void asignarMaterial(Long idSalon, Long idMaterial);
+	void asignarArea(Long idSalon, Long idArea) throws ServiciosException;
+	void asignarMaterial(Long idSalon, Long idMaterial) throws ServiciosException;
 
 }
