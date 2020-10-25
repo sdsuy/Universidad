@@ -1,7 +1,6 @@
 package com.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -45,9 +44,8 @@ public class Salon implements Serializable {
 	@ManyToOne(optional=false)
 	private Area area;
 	
-	@OneToMany
-	private List<Material> materiales = new ArrayList<>();
-	
+	@OneToMany()
+	private List<Material> materiales;
 	
 	public Salon() {
 		super();
@@ -88,9 +86,11 @@ public class Salon implements Serializable {
 	public void setArea(Area area) {
 		this.area = area;
 	}
+	
 	public List<Material> getMateriales() {
 		return materiales;
 	}
+	
 	public void setMateriales(List<Material> materiales) {
 		this.materiales = materiales;
 	}
