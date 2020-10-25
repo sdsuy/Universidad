@@ -26,11 +26,11 @@ public class SalonesBean implements SalonesBeanRemote {
     }
 
 	@Override
-	public void crear(Salon salon) throws ServiciosException {
+	public void crear(String nombre, Long idDepartamento) throws ServiciosException {
 		
 		try {
-			em.persist(salon);
-			em.flush();
+//			em.persist(salon);
+//			em.flush();
 		} catch (PersistenceException e) {
 			throw new ServiciosException("No se pudo crear el Salon");
 		}
