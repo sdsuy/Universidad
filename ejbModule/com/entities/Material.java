@@ -19,10 +19,10 @@ public class Material implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "material-generator")
 	private Long id;
 	
-	@Column(length=40)
+	@Column(length=60)
 	private String nombre;
 	
-	@Column(length=40)
+	@Column(length=100)
 	private String descripcion;
 
 	
