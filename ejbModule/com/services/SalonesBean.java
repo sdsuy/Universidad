@@ -68,14 +68,13 @@ public class SalonesBean implements SalonesBeanRemote {
 
 	@Override
 	public List<Salon> obtenerUno(String filtro) {
-//		TypedQuery<Salon> query = em.createQuery("SELECT s FROM Salon s WHERE s.nombre LIKE :nombre", Salon.class).setParameter("nombre", filtro);
 		TypedQuery<Salon> query = em.createNamedQuery("obtenerTodosFiltro", Salon.class).setParameter("nombre", filtro);
 		return query.getResultList();
 	}
 
 	@Override
 	public List<Salon> obtenerTodos() {
-		TypedQuery<Salon> query = em.createQuery("SELECT s FROM Salon s",Salon.class);
+		TypedQuery<Salon> query = em.createQuery("SELECT DISTINCT s FROM Salon s INNER JOIN FETCH s.materiales m", Salon.class);
 		return query.getResultList();
 	}
 
