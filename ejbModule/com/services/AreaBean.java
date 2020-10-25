@@ -43,6 +43,12 @@ public class AreaBean implements AreaBeanRemote {
 	}
 
 	@Override
+	public List<Area> leerTodosFiltro(String filtro) {
+		TypedQuery<Area> query = em.createNamedQuery("leerTodosFiltro", Area.class).setParameter("nombre", filtro);
+		return query.getResultList();
+	}
+
+	@Override
 	public void actualizar(Area area) {
 		em.merge(area);
 		em.flush();

@@ -13,6 +13,7 @@ public interface AreaBeanRemote {
 	void crear(Area area) throws ServiciosException;
 	Area leerUno(Long id); 
 	List<Area> leerTodos();
+	List<Area> leerTodosFiltro(String filtro);
 	void actualizar(Area area) throws ServiciosException;
 	void borrar(Long id) throws ServiciosException;
 

@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="areas")
 @NamedQuery(name="leerTodos", query="SELECT e FROM Area e")
+@NamedQuery(name="leerTodosFiltro", query="SELECT e FROM Area e WHERE e.nombre LIKE :nombre")
 public class Area implements Serializable {
 
 	
