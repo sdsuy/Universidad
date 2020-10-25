@@ -10,7 +10,7 @@ import com.exception.ServiciosException;
 @Remote
 public interface SalonesBeanRemote {
 
-	void crear(String nombre, Long idDepartamento) throws ServiciosException;
+	void crear(String nombre, Long idArea) throws ServiciosException;
 	void actualizar(Salon salon) throws ServiciosException;
 	void borrar(Long id) throws ServiciosException;
 	List<Salon> obtenerUno(String filtro);
